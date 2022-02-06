@@ -25,6 +25,12 @@ function keyPressed() {
      if(key=='Enter'){
          console.log(entered_word[tries-1].length)
         if(entered_word[tries-1].length==5){
+            var validword=false;
+         for (let index = 0; index < words.length; index++) {
+             if(words[index]==entered_word[tries-1].toLowerCase()){validword=true} 
+             
+         }
+         if(validword==true){
             if(tries<5){
             tries=tries+1
             console.log(tries)
@@ -67,7 +73,7 @@ function keyPressed() {
             }
         }
         else{alert("You're were unable to find the correct word. Thank you for playing!")}
-        }
+    }else{alert("Invalid word")}}
     }
     if(entered_word[tries-1].length<=4 && key!='Backspace'&&key!='Enter'){
         entered_word[tries-1]=(entered_word[tries-1]+key).toUpperCase()
