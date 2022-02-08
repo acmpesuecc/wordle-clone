@@ -16,9 +16,10 @@ function keyPressed() {
         check()
         fill(0,0,0)
         textSize(160);
+        textFont("Monospace");
     for (let i = 0; i < entered_word.length; i++) {
         const element = entered_word[i];
-        text(element,displayWidth/3,(displayHeight/3)+displayHeight*0.1*i)
+        text(element,displayWidth/2,(displayHeight/3)+130*i)
     }    
     }
     console.log(entered_word[tries-1].length)
@@ -38,6 +39,7 @@ function keyPressed() {
             background(255,255,255)
             fill(0,0,0)
             textSize(160);
+            textFont("Monospace");
             for (let i = 0; i < entered_word.length; i++) {
                 const element = entered_word[i];
                 var allcorrect = 0;
@@ -54,21 +56,21 @@ function keyPressed() {
                     }
                     if(letter==selected_word[x]){
                         fill(0,255,0)
-                        rect((displayWidth/3)+110*x, (displayHeight/3)-120+displayHeight*0.1*i, 100,120)
+                        rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
                     }
                     else if(wrong_pos_letter==true){
                         fill(255,255,0)
-                        rect((displayWidth/3)+110*x, (displayHeight/3)-120+displayHeight*0.1*i, 100,120)
+                        rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
                         
                     }
                     else{
                         fill(225)
-                        rect((displayWidth/3)+110*x, (displayHeight/3)-120+displayHeight*0.1*i, 100,120)
+                        rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
                         
                     }
                 }
                 fill(0,0,0)
-                text(element,displayWidth/3,(displayHeight/3)+displayHeight*0.1*i)
+                text(element,displayWidth/2,(displayHeight/3)+130*i)
                 if(allcorrect==5){alert("You have found the right word ")}
             }
         }
@@ -81,9 +83,10 @@ function keyPressed() {
         check()
         fill(0,0,0)
         textSize(160);
+        textFont("Monospace");
         for (let i = 0; i < entered_word.length; i++) {
             const element = entered_word[i];
-            text(element,displayWidth/3,(displayHeight/3)+displayHeight*0.1*i)
+            text(element,displayWidth/2,(displayHeight/3)+130*i)
         }
     
 }
@@ -105,20 +108,20 @@ function check(){
             }
             if(letter==selected_word[x]){
                 fill(0,255,0)
-                rect((displayWidth/3)+110*x, (displayHeight/3)-120+displayHeight*0.1*i, 100,120)
+                rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
             }
             else if(wrong_pos_letter==true){
                 fill(255,255,0)
-                rect((displayWidth/3)+110*x, (displayHeight/3)-120+displayHeight*0.1*i, 100,120)
+                rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
                 
             }
             else{
                 fill(225)
-                rect((displayWidth/3)+110*x, (displayHeight/3)-120+displayHeight*0.1*i, 100,120)
+                rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
                 
             }
         }
         fill(0,0,0)
-        text(element,displayWidth/3,(displayHeight/3)+displayHeight*0.1*i)
+        text(element,displayWidth/2,(displayHeight/3)+130*i)
     }
 }
