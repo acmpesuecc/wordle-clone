@@ -2,29 +2,41 @@ var words=['which','there','their','about','would','these','other','words','coul
 var entered_word=["","","","",""]
 var tries=1;
 var selected_word=words[Math.floor(Math.random() * words.length)];
+let d=[];
 console.log(selected_word)
 function setup() {
-    createCanvas(displayWidth,displayHeight)
+    let cnv=createCanvas(displayWidth,displayHeight)
+    cnv.parent('wordle_canvas')
     background(255,255,255)
+    for (let i = 0; i < 50; i++) {
+        d.push(new Falling_word());
+    }
+
+    
+}
+function draw() {
+    background(125,199,52)
+    for (let i = 0; i < d.length; i++) {
+        const element = d[i];
+        element.fall()
+        element.show()
+    }
+    check()
+        fill(0,0,0)
+        textSize(160);
+        textFont("Monospace");
+        for (let i = 0; i < entered_word.length; i++) {
+            const element = entered_word[i];
+            text(element,(displayWidth*5)/16,(displayHeight/3)+130*i)
+        }
 }
 function keyPressed() {
     console.log(entered_word)
     if(key=='Backspace'){
         entered_word[tries-1]=entered_word[tries-1].slice(0,entered_word[tries-1].length-1).toUpperCase()
-        console.log;
-        background(255,255,255)
-        check()
-        fill(0,0,0)
-        textSize(160);
-        textFont("Monospace");
-    for (let i = 0; i < entered_word.length; i++) {
-        const element = entered_word[i];
-        text(element,displayWidth/2,(displayHeight/3)+130*i)
-    }    
+         
     }
-    console.log(entered_word[tries-1].length)
      if(key=='Enter'){
-         console.log(entered_word[tries-1].length)
         if(entered_word[tries-1].length==5){
             var validword=false;
          for (let index = 0; index < words.length; index++) {
@@ -32,10 +44,8 @@ function keyPressed() {
              
          }
          if(validword==true){
-            if(tries<5){
+            if(tries<4){
             tries=tries+1
-            console.log(tries)
-            console.log(entered_word)
             background(255,255,255)
             fill(0,0,0)
             textSize(160);
@@ -56,38 +66,39 @@ function keyPressed() {
                     }
                     if(letter==selected_word[x]){
                         fill(0,255,0)
-                        rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
+                        rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
                     }
                     else if(wrong_pos_letter==true){
                         fill(255,255,0)
-                        rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
+                        rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
                         
                     }
                     else{
                         fill(225)
-                        rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
+                        rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
                         
                     }
                 }
                 fill(0,0,0)
-                text(element,displayWidth/2,(displayHeight/3)+130*i)
-                if(allcorrect==5){alert("You have found the right word ")}
+                text(element,(displayWidth*5)/16,(displayHeight/3)+130*i)
+                if(allcorrect==5){alert("You have found the right word ")
+                entered_word=["","","","",""]
+                tries=1;
+                selected_word=words[Math.floor(Math.random() * words.length)];
+            }
             }
         }
-        else{alert("You're were unable to find the correct word. Thank you for playing!")}
+        else{alert("You're were unable to find the correct word. Thank you for playing!")
+        entered_word=["","","","",""]
+        tries=1;
+        selected_word=words[Math.floor(Math.random() * words.length)];
+        
+    }
     }else{alert("Invalid word")}}
     }
     if(entered_word[tries-1].length<=4 && key!='Backspace'&&key!='Enter'){
         entered_word[tries-1]=(entered_word[tries-1]+key).toUpperCase()
-        background(255,255,255)
-        check()
-        fill(0,0,0)
-        textSize(160);
-        textFont("Monospace");
-        for (let i = 0; i < entered_word.length; i++) {
-            const element = entered_word[i];
-            text(element,displayWidth/2,(displayHeight/3)+130*i)
-        }
+        
     
 }
 }
@@ -108,20 +119,44 @@ function check(){
             }
             if(letter==selected_word[x]){
                 fill(0,255,0)
-                rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
+                rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
             }
             else if(wrong_pos_letter==true){
                 fill(255,255,0)
-                rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
+                rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
                 
             }
             else{
                 fill(225)
-                rect((displayWidth/2)+90*x, (displayHeight/3)-120+130*i, 90,120)
+                rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
                 
             }
         }
         fill(0,0,0)
-        text(element,displayWidth/2,(displayHeight/3)+130*i)
+        textSize(160);
+        textFont("Monospace");
+        text(element,(displayWidth*5)/16,(displayHeight/3)+130*i)
+    }
+}
+class Falling_word{
+    constructor(){
+    this.x=Math.random()*displayWidth;
+    this.y=Math.floor(Math.random()*-1*displayHeight);
+    this.yspeed=Math.ceil(Math.random()*4)-1;
+    this.rand=Math.floor(Math.random()*26)
+    } 
+    fall(){
+        this.y=this.y+this.yspeed;
+        if(this.y>displayHeight){
+            this.y=Math.floor(Math.random()*-1*displayHeight);
+        }
+    }
+    show(){
+        fill(227, 207, 170)
+        rect(0+this.x, 0+this.y, 68,90)
+        fill(0,0,0)
+        textSize(60);
+        textFont("Monospace");
+        text(String.fromCharCode(65+this.rand),17+this.x,62+this.y)
     }
 }
