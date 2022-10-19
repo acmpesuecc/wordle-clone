@@ -12,4 +12,4 @@ This project uses HTML,CSS,JS and P5.JS
 2. Navigate to the forked repository then clone it.
 3. Open index.html with a browser
 
-## Maintainer in charge [Nigel Dias](https://github.com/nigeldias27)
+### Maintainer in charge [Nigel Dias](https://github.com/nigeldias27)
