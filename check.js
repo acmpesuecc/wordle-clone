@@ -4,8 +4,6 @@ function check(){
         
         for (let x = 0; x < element.length; x++) {
             const letter = element[x].toLowerCase();
-            console.log(letter)
-            console.log(selected_word[x])
             var wrong_pos_letter=false
             for (let q = 0; q < selected_word.length; q++) {
                 if(letter==selected_word[q]){
