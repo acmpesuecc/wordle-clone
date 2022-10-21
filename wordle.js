@@ -117,12 +117,27 @@ function keyPressed() {
     }
     if(entered_word[tries-1].length<=4 && checkAlphabet(key)){
         entered_word[tries-1]=(entered_word[tries-1]+key).toUpperCase()
+        colorChange(entered_word[tries-1])
         
     
 }
 }
 
+function colorChange(l){
+    var i;
+    var letter = document.getElementsByClassName('letter');
+    for(i=0;i<letter.length;i++){
+        
+         if (letter[i].textContent.includes(l)) {
+            
+            document.querySelector("letter").textContent.includes(l).style.backgroundColor="red";
+            
+         } 
+    }
+    
+}
 function checkAlphabet(k){
+    
     if(alphabet.includes(k)){
         return true
     }
@@ -161,3 +176,5 @@ function renderAgain(){
     tries=1;
     selected_word=words[Math.floor(Math.random() * words.length)];
 }
+
+f
