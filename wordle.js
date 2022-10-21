@@ -6,6 +6,7 @@ var entered_word=["","","","","","",""]
 var tries=1;
 var maxTries = 5;
 var selected_word=words[Math.floor(Math.random() * words.length)];
+var a=[];
 let d=[];
 console.log(selected_word)
 function setup() {
@@ -47,6 +48,7 @@ function keyPressed() {
              if(words[index]==entered_word[tries-1].toLowerCase()){validword=true} 
              
          }
+
          if(validword==true){
             if(tries<maxTries){
             tries=tries+1
@@ -91,6 +93,16 @@ function keyPressed() {
                 selected_word=words[Math.floor(Math.random() * words.length)];
             }
             }
+            var flagg=1;
+            for(let tat=0;tat<a.length;tat++)
+            {
+                if(a[tat]==entered_word[tries-2]){alert("repeated word, enter another");flagg=0;tries--;break;}
+            }
+            if(flagg)
+            a.push(entered_word[tries-2]);
+            flagg=0;
+            // alert(a.length);
+            
         }
         else{alert("You're were unable to find the correct word. Thank you for playing!")
         entered_word=["","","","","", "", ""]
