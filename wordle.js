@@ -1,10 +1,25 @@
 var words=[]
 var selected_word;
+
+var max_tries = 7;
+
 (async () => {
     const data = await (await fetch('words.txt')).text();
     words = data.split('\n');
     selected_word = words[Math.floor(Math.random() * words.length)];
     console.log(selected_word);
+    $('.easy').click(function () {
+        console.log("easy");
+        max_tries = 7;
+    });
+    $('.medium').click(function () {
+        console.log("medium");
+        max_tries = 5;
+    });
+    $('.hard').click(function () {
+        console.log("hard");
+        max_tries = 3;
+    });
 })();
 
 var alp = Array.from(Array(26)).map((e, i) => i + 97);
@@ -53,7 +68,7 @@ function keyPressed() {
              
          }
          if(validword==true){
-            if(tries<4){
+            if(tries<max_tries){
             tries=tries+1
             background(255,255,255)
             fill(0,0,0)
