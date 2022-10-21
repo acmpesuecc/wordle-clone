@@ -32,3 +32,4 @@ function check(){
         text(element,(displayWidth*5)/16,(displayHeight/3)+130*i)
     }
 }
+setTimeout( function ( ) { alert( "Time is up!!!" ); location.reload();}, 300000 ) //added a timer to reset the gane after 5 mins
