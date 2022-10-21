@@ -19,10 +19,6 @@ function setup() {
 
     
 }
-
-
-
-
 function draw() {
     background(125,199,52)
     for (let i = 0; i < d.length; i++) {
@@ -46,7 +42,6 @@ function keyPressed() {
          
     }
      if(key=='Enter'){
-        
         if(entered_word[tries-1].length==5){
             var validword=false;
          for (let index = 0; index < words.length; index++) {
@@ -61,11 +56,8 @@ function keyPressed() {
             fill(0,0,0)
             textSize(160);
             textFont("Monospace");
-            
-            
             for (let i = 0; i < entered_word.length; i++) {
                 const element = entered_word[i];
-                
                 var allcorrect = 0;
                 for (let x = 0; x < element.length; x++) {
                     const letter = element[x].toLowerCase();
@@ -91,13 +83,6 @@ function keyPressed() {
                         fill(225)
                         rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
                         
-                    }
-                    l=i+1;
-                    t=i;
-                    if (entered_word[l]==entered_word[t]){
-                        alert("word already used!")
-                        entered_word[l]=""
-                        continue;
                     }
                 }
                 fill(0,0,0)
