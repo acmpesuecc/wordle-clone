@@ -9,10 +9,9 @@ var selected_word;
 
 var alp = Array.from(Array(26)).map((e, i) => i + 97);
 var alphabet = alp.map((x) => String.fromCharCode(x));
-
-var entered_word=["","","","",""]
-var tries=1;
-let d=[];
+var entered_word = ["", "", "", "", ""];
+var tries = 1;
+let d = [];
 function setup() {
     let cnv=createCanvas(displayWidth,displayHeight)
     cnv.parent('wordle_canvas')
