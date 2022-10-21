@@ -84,6 +84,14 @@
     .blue .x:hover {
       cursor: pointer;
     }
+
+    .timercount {
+      height: 30px;
+      font-size: 30px;
+      font-family: monospace;
+      text-align: center;
+      padding: 20px;
+    }
   </style>
   <script type="text/javascript">
     $(function () {
@@ -157,8 +165,9 @@
         <div id="1" class="dif_but" onclick="difficultyHandle(event)">Medium</div>
         <div id="2" class="dif_but" onclick="difficultyHandle(event)">Hard</div>
       </div>
+      <div class="timercount">Time left = <span id="timer"></span></div>
       <div id="wordle_canvas" style="display: flex;justify-content: center;"></div>
-      <div>Time left = <span id="timer"></span></div>
+
   </body>
 
 </html>
