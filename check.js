@@ -5,6 +5,7 @@ function check(){
         for (let x = 0; x < element.length; x++) {
             const letter = element[x].toLowerCase();
             var wrong_pos_letter=false
+
             for (let q = 0; q < selected_word.length; q++) {
                 if(letter==selected_word[q]){
                     wrong_pos_letter=true;
@@ -26,6 +27,8 @@ function check(){
                 
             }
         }
+    
+    
         fill(0,0,0)
         textSize(160);
         textFont("Monospace");
