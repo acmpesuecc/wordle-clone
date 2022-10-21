@@ -1,6 +1,16 @@
-document.getElementById('timer').innerHTML =
-  05 + ":" + 00;
+function diff_time(num){
+    if(num==1){
+    document.getElementById('timer').innerHTML =
+  07 + ":" + 00;}
+  else if(num==2){
+    document.getElementById('timer').innerHTML =
+  05 + ":" + 00;}
+  else{
+        document.getElementById('timer').innerHTML =
+      03 + ":" + 00;}
+  
 startTimer();
+}
 
 
 function startTimer() {
