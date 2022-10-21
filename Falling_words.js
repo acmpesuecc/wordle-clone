@@ -12,11 +12,15 @@ class Falling_word{
         }
     }
     show(){
-        fill(227, 207, 170)
+        //fill(227, 207, 170)
+        fill(234, 234, 234)
+       
         rect(0+this.x, 0+this.y, 68,90)
-        fill(0,0,0)
+       // fill(0,0,0)
+       fill(0, 171, 179)
         textSize(60);
-        textFont("Monospace");
+        //textFont("Monospace");
+       textFont("Block Font")
         text(String.fromCharCode(65+this.rand),17+this.x,62+this.y)
     }
 }

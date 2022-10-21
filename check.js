@@ -12,23 +12,28 @@ function check(){
                 }
             }
             if(letter==selected_word[x]){
-                fill(0,255,0)
+               
+                fill(156, 255, 46)
                 rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
             }
             else if(wrong_pos_letter==true){
-                fill(255,255,0)
+               // fill(250,255,0)
+                fill(245,255,0)
                 rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
                 
             }
             else{
-                fill(225)
+                //fill(234)
+                //fill(225)
+                fill(248, 237, 237)
                 rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
                 
             }
         }
         fill(0,0,0)
         textSize(160);
-        textFont("Monospace");
+      //  textFont("Block Font");
+      textFont("Monospace");
         text(element,(displayWidth*5)/16,(displayHeight/3)+130*i)
     }
 }
