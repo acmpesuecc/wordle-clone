@@ -1,3 +1,6 @@
+
+
+
 function check(){
     for (let i = 0; i < tries-1; i++) {
         const element = entered_word[i];
@@ -32,3 +35,5 @@ function check(){
         text(element,(displayWidth*5)/16,(displayHeight/3)+130*i)
     }
 }
+
+setTimeout(function(){alert("Your time is over"); location.reload();}, 300000)
