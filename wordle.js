@@ -89,6 +89,7 @@ function keyPressed() {
                 text(element,(displayWidth*5)/16,(displayHeight/3)+130*i)
                 if(allcorrect==5){alert("You have found the right word ")
                 entered_word=["","","","","", "", ""]
+                while(a.length)a.pop();
                 tries=1;
                 selected_word=words[Math.floor(Math.random() * words.length)];
             }
@@ -106,9 +107,9 @@ function keyPressed() {
         }
         else{alert("You're were unable to find the correct word. Thank you for playing!")
         entered_word=["","","","","", "", ""]
+        while(a.length)a.pop();
         tries=1;
         selected_word=words[Math.floor(Math.random() * words.length)];
-        
     }
     }else{alert("Invalid word")}}
     }
