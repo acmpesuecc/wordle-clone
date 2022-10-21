@@ -21,15 +21,22 @@
     <script src="wordle.js"></script>
     <script src="Falling_words.js"></script>
     <script src="check.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    
+    
         <div style="width:100vw;">
+           
+
             <div style="display: flex;justify-content: center;">
                 <h1 style="font-family: monospace;font-size: 64px;">Wordle Clone</h1>
             </div>
+            <div id="timertext">Time left = <span id="timer"></span></div>
             <div id="dif">  
                 <div id="dif_title"></div>
-                <div id="0" class="dif_but" onclick="difficultyHandle(event)">Easy</div>
-                <div id="1" class="dif_but" onclick="difficultyHandle(event)">Medium</div>
-                <div id="2" class="dif_but" onclick="difficultyHandle(event)">Hard</div>
+                
+                <div id="0" class="dif_but" ><button onclick="difficultyHandle(event)">Easy</button></div>
+                <div id="1" class="dif_but" ><button onclick="difficultyHandle(event)">Medium</button></div>
+                <div id="2" class="dif_but" ><button onclick="difficultyHandle(event)">Hard</button></div>
             </div>
             <div id="wordle_canvas" style="display: flex;justify-content: center;"></div>
             <div style="display: flex;justify-content: center;">
@@ -42,5 +49,6 @@
                 </ul>
             </div>
         </div>
+        <script src="countdown.js"></script>
 </body>
 </html>

@@ -33,3 +33,4 @@ function check(){
     }
 }
 setTimeout( function ( ) { alert( "Time is up!!!" ); location.reload();}, 300000 ) //added a timer to reset the gane after 5 mins
+
