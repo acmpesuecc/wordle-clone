@@ -8,6 +8,31 @@ var maxTries = 5;
 var selected_word = words[Math.floor(Math.random() * words.length)];
 let d = [];
 console.log(selected_word)
+function checkSecond(sec) {
+    if (sec < 10 && sec >= 0) { sec = "0" + sec }; // add zero in front of numbers < 10
+    if (sec < 0) { sec = "59" };
+    return sec;
+}
+
+function startTimer() {
+    var presentTime = document.getElementById('timer').innerHTML;
+    var timeArray = presentTime.split(/[:]+/);
+    var m = timeArray[0];
+    var s = checkSecond((timeArray[1] - 1));
+    if (s == 59) { m = m - 1 }
+    if (m < 0) {
+        alert("Time is Up!!")
+        location.reload()
+        return
+    }
+
+    document.getElementById('timer').innerHTML =
+        m + ":" + s;
+    console.log(m)
+    setTimeout(startTimer, 1000);
+
+}
+
 function setup() {
     let cnv = createCanvas(displayWidth, displayHeight)
     cnv.parent('wordle_canvas')
@@ -18,34 +43,7 @@ function setup() {
     document.getElementById('timer').innerHTML =
         05 + ":" + 00;
     startTimer();
-
-
-    function startTimer() {
-        var presentTime = document.getElementById('timer').innerHTML;
-        var timeArray = presentTime.split(/[:]+/);
-        var m = timeArray[0];
-        var s = checkSecond((timeArray[1] - 1));
-        if (s == 59) { m = m - 1 }
-        if (m < 0) {
-            return
-        }
-
-        document.getElementById('timer').innerHTML =
-            m + ":" + s;
-        console.log(m)
-        setTimeout(startTimer, 1000);
-
-    }
-
-    function checkSecond(sec) {
-        if (sec < 10 && sec >= 0) { sec = "0" + sec }; // add zero in front of numbers < 10
-        if (sec < 0) { sec = "59" };
-        return sec;
-    }
 }
-
-
-
 
 function draw() {
     background(125, 199, 52)
