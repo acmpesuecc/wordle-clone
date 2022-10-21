@@ -1,4 +1,5 @@
 var words=[]
+var selected_word;
 (async () => {
     const data = await (await fetch('words.txt')).text();
     words = data.split('\n');
@@ -11,9 +12,7 @@ var alphabet = alp.map((x) => String.fromCharCode(x));
 
 var entered_word=["","","","",""]
 var tries=1;
-var selected_word=words[Math.floor(Math.random() * words.length)];
 let d=[];
-console.log(selected_word)
 function setup() {
     let cnv=createCanvas(displayWidth,displayHeight)
     cnv.parent('wordle_canvas')
