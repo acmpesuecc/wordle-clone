@@ -2,7 +2,7 @@ var words=[]
 var selected_word;
 (async () => {
     const data = await (await fetch('words.txt')).text();
-    words = data.split('\n');
+    words = data.split(',');
     selected_word = words[Math.floor(Math.random() * words.length)];
     console.log(selected_word);
 })();
