@@ -1,17 +1,33 @@
-function diff_time(num){
-    if(num==1){
+function diff_easy(num)
+{   startTimer();
+   if(num==1){
     document.getElementById('timer').innerHTML =
   07 + ":" + 00;}
-  else if(num==2){
+  else{
+  reset();}
+   }
+
+function diff_med(num)
+{   startTimer();
+   if(num==2){
     document.getElementById('timer').innerHTML =
   05 + ":" + 00;}
   else{
-        document.getElementById('timer').innerHTML =
-      03 + ":" + 00;}
-  
-startTimer();
-}
+  reset();}
+   }
 
+function diff_hard(num)
+   {   startTimer();
+      if(num==3){
+       document.getElementById('timer').innerHTML =
+     03 + ":" + 00;}
+     else{
+     reset();}
+      }
+
+function reset(){
+      window.location.reload();
+}
 
 function startTimer() {
   var presentTime = document.getElementById('timer').innerHTML;

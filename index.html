@@ -31,13 +31,18 @@
                 <h1 style="font-family: monospace;font-size: 64px;">Wordle Clone</h1>
             </div>
             <div id="timertext">Time left = <span id="timer"></span></div>
+            <BR>
             <div id="dif">  
                 <div id="dif_title"></div>
                 
-                <div id="0" class="dif_but"  onclick="diff_time(1)">Easy</div>
-                <div id="1" class="dif_but" onclick="diff_time(2)">Medium</div>
-                <div id="2" class="dif_but" onclick="diff_time(3)">Hard</div>
+                <div id="0" class="dif_but"  onclick="diff_easy(1)">Easy</div>
+                <div id="1" class="dif_but" onclick="diff_med(2)">Medium</div>
+                <div id="2" class="dif_but" onclick="diff_hard(3)">Hard</div>
+                <div id="3" class="dif_but" onclick="reset()">Reset</div>
+
             </div>
+            <center>
+            <P style="font-family: monospace; font-size:15px">Choose "RESET" if you want to change the difficulty timer</P> </center>
             <div id="wordle_canvas" style="display: flex;justify-content: center;"></div>
             <div style="display: flex;justify-content: center;">
                 <h2 style="font-family: monospace;font-size: 32px;">Rules</h2></div>
