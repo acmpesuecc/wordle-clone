@@ -10,6 +10,19 @@
     }
   </style>
   <style type="text/css">
+    .dif_but {
+      background-color: #dff9fb;
+      font-size: 24px;
+      border-radius: 5px;
+      width: 10vw;
+      text-align: center;
+
+    }
+
+    .dif_but:hover {
+      background-color: grey;
+    }
+
     #overlay {
       position: fixed;
       top: 0;
@@ -152,10 +165,9 @@
       </div>
       <div id="dif">
         <div id="dif_title"></div>
-        <div id="0" class="dif_but" onClick="difficultyHandle(event)">Easy</div>
-        <div id="1" class="dif_but" onClick="difficultyHandle(event)">Medium</div>
-        <div id="2" class="dif_but" onClick="difficultyHandle(event)">Hard</>
-        </div>
+        <button id="0" class="dif_but" onClick="difficultyHandle(event)">Easy</button>
+        <button id="1" class="dif_but" onClick="difficultyHandle(event)">Medium</button>
+        <button id="2" class="dif_but" onClick="difficultyHandle(event)">Hard</button>
       </div>
       <div class="timercount">Time left = <span id="timer"></span></div>
       <div id="wordle_canvas" style="display: flex;justify-content: center;"></div>
