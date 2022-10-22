@@ -1,5 +1,6 @@
 <html>
 <head>
+  <link rel="stylesheet"  href="style.css"/>
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-1.8.2.js"
@@ -37,6 +38,8 @@
         .blue a {
           text-decoration: none;
         }
+
+        /* pop up */
         .popup {
           width: 100%;
           margin: 0 auto;
@@ -56,6 +59,8 @@
           border-radius: 5px;
           box-shadow: 0 2px 5px #000;
         }
+
+        /* game rules */
         .blue p {
           clear: both;
           color: #555555;
@@ -90,6 +95,11 @@
             overlay.appendTo(document.body).remove();
             return false;
           });
+
+          function draw(){
+            rotateX(millis()/1000);
+            box();
+          }
     
           $(".x").click(function () {
             $(".popup").hide();

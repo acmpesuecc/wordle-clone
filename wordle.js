@@ -78,17 +78,21 @@ function keyPressed() {
                     }
                     if(letter==selected_word[x]){
                         fill(0,255,0)
+                        
                         rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
+                        
                     }
                     else if(wrong_pos_letter==true){
                         fill(255,255,0)
+                        
                         rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
                         
                     }
                     else{
                         fill(225)
-                        rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
                         
+                        rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
+
                     }
                     l=i+1;
                     t=i;
