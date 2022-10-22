@@ -67,8 +67,8 @@ function keyPressed() {
                 var allcorrect = 0;
                 for (let x = 0; x < element.length; x++) {
                     const letter = element[x].toLowerCase();
-                    console.log(letter)
-                    console.log(selected_word[x])
+                    //console.log(letter)
+                    //onsole.log(selected_word[x])
                     var wrong_pos_letter=false
                     for (let q = 0; q < selected_word.length; q++) {
                         if(letter==selected_word[q]){
@@ -90,11 +90,11 @@ function keyPressed() {
                         rect(((displayWidth*5)/16)+90*x, (displayHeight/3)-120+130*i, 90,120)
                         
                     }
-                    l=i+1;
-                    t=i;
-                    if (entered_word[l]==entered_word[t]){
+                    console.log(entered_word[tries-2])
+                    if (entered_word[tries-2]==entered_word[i] && i != tries-2){
                         alert("word already used!")
-                        entered_word[l]=""
+                        entered_word[tries-2]=""
+                        tries--;
                         continue;
                     }
                 }
