@@ -8,12 +8,41 @@ var maxTries = 5;
 var selected_word = words[Math.floor(Math.random() * words.length)];
 let d = [];
 console.log(selected_word)
+var time = 0;
 function checkSecond(sec) {
     if (sec < 10 && sec >= 0) { sec = "0" + sec }; // add zero in front of numbers < 10
     if (sec < 0) { sec = "59" };
     return sec;
 }
-
+function difficultyHandle(event, val) {
+    time = 2 * val;
+    document.getElementById('timer').innerHTML =
+        time + ":" + 00;
+    startTimer();
+    console.log(maxTries)
+    switch (event.target.id) {
+        case '0':
+            maxTries = 7;
+            resizeCanvas(displayWidth, displayHeight + 250)
+            break
+        case '1':
+            console.log('medium')
+            maxTries = 5
+            if (tries > maxTries) {
+                renderAgain()
+            }
+            resizeCanvas(displayWidth, displayHeight)
+            break
+        case '2':
+            console.log('hard')
+            maxTries = 3
+            if (tries > maxTries) {
+                renderAgain()
+            }
+            resizeCanvas(displayWidth, displayHeight - 250)
+            break
+    }
+}
 function startTimer() {
     var presentTime = document.getElementById('timer').innerHTML;
     var timeArray = presentTime.split(/[:]+/);
@@ -40,9 +69,6 @@ function setup() {
     for (let i = 0; i < 50; i++) {
         d.push(new Falling_word());
     }
-    document.getElementById('timer').innerHTML =
-        05 + ":" + 00;
-    startTimer();
 }
 
 function draw() {
@@ -144,31 +170,7 @@ function checkAlphabet(k) {
     return false
 }
 
-function difficultyHandle(event) {
-    console.log(maxTries)
-    switch (event.target.id) {
-        case '0':
-            maxTries = 7;
-            resizeCanvas(displayWidth, displayHeight + 250)
-            break
-        case '1':
-            console.log('medium')
-            maxTries = 5
-            if (tries > maxTries) {
-                renderAgain()
-            }
-            resizeCanvas(displayWidth, displayHeight)
-            break
-        case '2':
-            console.log('hard')
-            maxTries = 3
-            if (tries > maxTries) {
-                renderAgain()
-            }
-            resizeCanvas(displayWidth, displayHeight - 250)
-            break
-    }
-}
+
 
 function renderAgain() {
     console.log("r")
