@@ -138,6 +138,7 @@
     <script src="wordle.js"></script>
     <script src="Falling_words.js"></script>
     <script src="check.js"></script>
+    <link href="styles.css" rel="stylesheet"/>
         <div style="width:100vw;">
             <div style="display: flex;justify-content: center;">
                 <h1 style="font-family: monospace;font-size: 64px;">Wordle Clone</h1>
@@ -148,7 +149,49 @@
                 <div id="1" class="dif_but" onclick="difficultyHandle(event)">Medium</div>
                 <div id="2" class="dif_but" onclick="difficultyHandle(event)">Hard</div>
             </div>
+            <div id="app">
+  
+
+              
+              <div id="keyboard-row1">
+                <button type="button" class="regularcontrast button" id="q" @click="enter('q')">Q</button>
+                <button type="button" class="regularcontrast button" id="w" @click="enter('w')">W</button>
+                <button type="button" class="regularcontrast button" id="e" @click="enter('e')">E</button>
+                <button type="button" class="regularcontrast button" id="r" @click="enter('r')">R</button>
+                <button type="button" class="regularcontrast button" id="t" @click="enter('t')">T</button>
+                <button type="button" class="regularcontrast button" id="y" @click="enter('y')">Y</button>
+                <button type="button" class="regularcontrast button" id="u" @click="enter('u')">U</button>
+                <button type="button" class="regularcontrast button" id="i" @click="enter('i')">I</button>
+                <button type="button" class="regularcontrast button" id="o" @click="enter('o')">O</button>
+                <button type="button" class="regularcontrast button" id="p" @click="enter('p')">P</button>
+              </div>
+              <div id="keyboard-row2">
+                <button type="button" class="regularcontrast button" id="a" @click="enter('a')">A</button>
+                <button type="button" class="regularcontrast button" id="s" @click="enter('s')">S</button>
+                <button type="button" class="regularcontrast button" id="d" @click="enter('d')">D</button>
+                <button type="button" class="regularcontrast button" id="f" @click="enter('f')">F</button>
+                <button type="button" class="regularcontrast button" id="g" @click="enter('g')">G</button>
+                <button type="button" class="regularcontrast button" id="h" @click="enter('h')">H</button>
+                <button type="button" class="regularcontrast button" id="j" @click="enter('j')">J</button>
+                <button type="button" class="regularcontrast button" id="k" @click="enter('k')">K</button>
+                <button type="button" class="regularcontrast button" id="l" @click="enter('l')">L</button>
+              </div>
+              <div id="keyboard-row3">
+                <button type="button" class="regularcontrast button" id="enter" @click="enter('Enter')">Enter</button>
+                <button type="button" class="regularcontrast button" id="z" @click="enter('z')">Z</button>
+                <button type="button" class="regularcontrast button" id="x" @click="enter('x')">X</button>
+                <button type="button" class="regularcontrast button" id="c" @click="enter('c')">C</button>
+                <button type="button" class="regularcontrast button" id="v" @click="enter('v')">V</button>
+                <button type="button" class="regularcontrast button" id="b" @click="enter('b')">B</button>
+                <button type="button" class="regularcontrast button" id="n" @click="enter('n')">N</button>
+                <button type="button" class="regularcontrast button" id="m" @click="enter('m')">M</button>
+                <button type="button" class="regularcontrast button" id="Backspace" @click="enter('Backspace')">Bksp</button>
+              </div>
+              
+            </div>
+
             <div id="wordle_canvas" style="display: flex;justify-content: center;"></div>
+
            
 </body>
 </html>
