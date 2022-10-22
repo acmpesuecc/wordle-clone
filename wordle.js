@@ -63,6 +63,8 @@ function keyPressed() {
             
             for (let i = 0; i < entered_word.length; i++) {
                 const element = entered_word[i];
+                console.log(element,"before");
+                change_button(element);
                 
                 var allcorrect = 0;
                 for (let x = 0; x < element.length; x++) {
@@ -160,4 +162,15 @@ function renderAgain(){
     entered_word=["","","","","","",""]
     tries=1;
     selected_word=words[Math.floor(Math.random() * words.length)];
+}
+  
+function change_button(str)
+{
+   for (let i = 0; i < str.length; i++) 
+   {
+       const el = str[i];
+       console.log(el,"change_button")
+       document.getElementById(el.toLowerCase()).style.backgroundColor="#8a8484";
+       
+   }
 }
